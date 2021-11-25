@@ -1,9 +1,12 @@
 package com.nttdata.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity  //representacion de la entidad modelo
@@ -15,6 +18,18 @@ public class Usuario {
 	private String nombre;
     private String apellido;
 	
+  //relacion 1 a 1
+  	@OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY) //si decido eliminar un usuario, también se elimina el celular
+  	private Celular celular;
+    
+	public Celular getCelular() {
+		return celular;
+	}
+
+	public void setCelular(Celular celular) {
+		this.celular = celular;
+	}
+
 	public Usuario() {
 		super();
 	}
