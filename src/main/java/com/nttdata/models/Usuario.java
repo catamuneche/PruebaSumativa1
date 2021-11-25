@@ -14,20 +14,15 @@ public class Usuario {
 	private Long id;
 	private String nombre;
     private String apellido;
-    private String rut;
-    private String dv;
-    
+	
 	public Usuario() {
 		super();
 	}
 	
-	public Usuario(Long id, String nombre, String apellido, String rut, String dv, String celular) {
+	public Usuario(String nombre, String apellido) {
 		super();
-		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.rut = rut;
-		this.dv = dv;
 	}
 	
 	public Long getId() {
@@ -48,25 +43,9 @@ public class Usuario {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public String getRut() {
-		return rut;
-	}
-	public void setRut(String rut) {
-		this.rut = rut;
-	}
-	public String getDv() {
-		return dv;
-	}
-	public void setDv(String dv) {
-		this.dv = dv;
-	}
 	
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", rut=" + rut + ", dv="
-				+ dv + "]";
+		return "Usuario [nombre=" + nombre + ", apellido=" + apellido + "]";
 	}
-
-    
-    
 }

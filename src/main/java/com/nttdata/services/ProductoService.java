@@ -14,34 +14,33 @@ import com.nttdata.repositories.ProductoRepository;
 public class ProductoService {
 	@Autowired //inyección de dependencia
 	ProductoRepository productoRepository;
-	
-	public void insertarproducto(@Valid Producto producto) {
+
+	public void insertarProducto(@Valid Producto producto) {
 		productoRepository.save(producto);
 	}
 	
-	public void editarproducto(@Valid Producto producto) {
+	public void editarProducto(@Valid Producto producto) {
 		productoRepository.save(producto);
 	}
 	
-	public void eliminarproducto(@Valid Producto producto) {
+	public void eliminarProducto(@Valid Producto producto) {
 		productoRepository.delete(producto);
 	}
 
-	public List<Producto> obtenerListaproducto(){
+	public List<Producto> obtenerListaProducto(){
 		return productoRepository.findAll();
 	}
-	public Producto buscarproductoId(Long id) {
 
+	public Producto buscarProductoId(Long id) {
 		return productoRepository.findById(id).get();
 	}
 
-	public void eliminarproducto(Long id) {
+	public void eliminarProducto(Long id) {
 		productoRepository.deleteById(id);
 	}
 
-	public void eliminarproductoObjeto(Producto producto) {
+	public void eliminarProductoObjeto(Producto producto) {
 		productoRepository.delete(producto);
 
 	}
-	
 }

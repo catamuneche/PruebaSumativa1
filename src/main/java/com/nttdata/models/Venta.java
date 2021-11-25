@@ -13,50 +13,29 @@ public class Venta {
 	@GeneratedValue(strategy=GenerationType.IDENTITY) //es autoincrementable
 	private Long id;
 	private String detalle;
-	//private Usuario usuario;
-	//private List<Producto> listaProductos;
-	
-	public Venta() {
-		super();
-	}
-	
 	public Venta(Long id, String detalle) {
 		super();
 		this.id = id;
 		this.detalle = detalle;
-//		this.listaProductos = listaProductos;
 	}
-	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-//	public Usuario getUsuario() {
-//		return usuario;
-//	}
-//	public void setUsuario(Usuario usuario) {
-//		this.usuario = usuario;
-//	}
-//	public List<Producto> getListaProductos() {
-//		return listaProductos;
-//	}
-//	public void setListaProductos(List<Producto> listaProductos) {
-//		this.listaProductos = listaProductos;
-//	}
-
 	public String getDetalle() {
 		return detalle;
 	}
-
 	public void setDetalle(String detalle) {
 		this.detalle = detalle;
 	}
+	@Override
+	public String toString() {
+		return "Venta [id=" + id + ", detalle=" + detalle + "]";
+	}
+	public Venta() {
+		super();
+	}
 	
-//	@Override
-//	public String toString() {
-//		return "Venta [id=" + id + ", usuario=" + usuario + ", listaProductos=" + listaProductos + "]";
-//	}
-
 }
