@@ -14,7 +14,7 @@ import com.nttdata.repositories.UsuarioRepository;
 public class UsuarioService {
 	@Autowired //inyección de dependencia
 	UsuarioRepository usuarioRepository;
-	
+
 	public void insertarUsuario(@Valid Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}
@@ -30,6 +30,12 @@ public class UsuarioService {
 	public List<Usuario> obtenerListaUsuario(){
 		return usuarioRepository.findAll();
 	}
+	
+	public List<Usuario> obtenerListaUsuarios() {
+
+		return  usuarioRepository.findAll();
+	}
+
 	public Usuario buscarUsuarioId(Long id) {
 
 		return usuarioRepository.findById(id).get();
@@ -43,5 +49,4 @@ public class UsuarioService {
 		usuarioRepository.delete(usuario);
 
 	}
-	
 }

@@ -14,34 +14,33 @@ import com.nttdata.repositories.VentaRepository;
 public class VentaService {
 	@Autowired //inyección de dependencia
 	VentaRepository ventaRepository;
-	
-	public void insertarventa(@Valid Venta venta) {
+
+	public void insertarVenta(@Valid Venta venta) {
 		ventaRepository.save(venta);
 	}
 	
-	public void editarventa(@Valid Venta venta) {
+	public void editarVenta(@Valid Venta venta) {
 		ventaRepository.save(venta);
 	}
 	
-	public void eliminarventa(@Valid Venta venta) {
+	public void eliminarVenta(@Valid Venta venta) {
 		ventaRepository.delete(venta);
 	}
 
-	public List<Venta> obtenerListaventa(){
+	public List<Venta> obtenerListaVenta(){
 		return ventaRepository.findAll();
 	}
-	public Venta buscarventaId(Long id) {
 
+	public Venta buscarVentaId(Long id) {
 		return ventaRepository.findById(id).get();
 	}
 
-	public void eliminarventa(Long id) {
+	public void eliminarVenta(Long id) {
 		ventaRepository.deleteById(id);
 	}
 
-	public void eliminarventaObjeto(Venta venta) {
+	public void eliminarVentaObjeto(Venta venta) {
 		ventaRepository.delete(venta);
 
 	}
-	
 }
